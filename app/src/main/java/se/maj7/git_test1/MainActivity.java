@@ -5,9 +5,11 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,6 +28,12 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        // Code here
+        Toast.makeText(this, "See me?", Toast.LENGTH_SHORT).show();
+
+        // Print to console
+        Log.i("info", "done creating app");
     }
 
     @Override
@@ -48,5 +56,15 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void topClick(View v) {
+        Toast.makeText(this, "TOP BUTTON", Toast.LENGTH_SHORT).show();
+        Log.i("info","top button clicked");
+    }
+
+    public void bottomClick(View v) {
+        Toast.makeText(this, "BOTTOM BUTTON", Toast.LENGTH_SHORT).show();
+        Log.i("info","bottom button clicked");
     }
 }
